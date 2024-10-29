@@ -154,3 +154,40 @@ p {
     left: -0rem;
     color: #cc5c00;
 }
+
+.hover-name {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Light, subtle line */
+  transition: border-color 0.3s;
+}
+
+.hover-name:hover {
+  border-bottom-color: rgba(0, 0, 0, 0.5); /* Slightly darker on hover */
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 1.5em; /* Roughly equivalent to 24px if base font size is 16px */
+  left: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 0.3em 0.5em; /* Flexible padding */
+  border-radius: 0.3em; /* Rounded corners that scale with text size */
+  font-size: 0.9em;
+  width: max-content;
+  box-shadow: 0em 0.25em 0.5em rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s;
+}
+
+.hover-name:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-icon {
+  font-size: 0.9em;
+  margin-left: 5px;
+}
