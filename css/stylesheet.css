@@ -155,6 +155,20 @@ p {
     color: #cc5c00;
 }
 
+.award {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.award::before {
+    content: '▶';
+    position: absolute;
+    left: -0rem;
+    color: #a1005b;
+}
+
+
 .hover-name {
   position: relative;
   cursor: pointer;
@@ -187,7 +201,14 @@ p {
     opacity: 1;
 }
 
-.tooltip-icon {
-  font-size: 0.9em;
-  margin-left: 5px;
+.highlight {
+    font-weight: bold;
+    color: #a1005b;
+    font-size: 1em;
+}
+
+.paper-image {
+    width: auto;
+    height: 15rem;
+    margin-left: 1.5rem;
 }
