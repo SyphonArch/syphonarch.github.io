@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +10,13 @@ body {
     line-height: 1.6;
     background-color: #faf0e1;
     color: #333;
-    font-size: 1rem; /* Base font size */
+    font-size: 1rem;
+    /* Base font size */
 }
 
-header, footer {
+/* Header Styles */
+header,
+footer {
     background-color: #c9985c;
     color: #fff;
     text-align: center;
@@ -24,16 +28,6 @@ header, footer {
 header h1 {
     margin: 0;
     font-size: 2rem;
-}
-
-footer p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
 }
 
 header .links {
@@ -51,12 +45,25 @@ header .links a:hover {
     text-decoration: underline;
 }
 
+/* Footer Styles */
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Container and Layout */
 .container {
     width: 90%;
     max-width: 65rem;
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 0.5rem;
+    overflow-x: hidden;
 }
 
 .profile {
@@ -64,20 +71,24 @@ header .links a:hover {
     align-items: center;
     text-align: left;
     flex-wrap: wrap;
-}
-
-.profile-pic {
-    width: 15rem;
-    height: 15rem;
-    border-radius: 30%;
-    object-fit: cover;
-    margin-right: 2rem;
+    width: 100%;
 }
 
 .intro {
     flex: 1;
 }
 
+/* Profile Picture */
+.profile-pic {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 30%;
+    object-fit: cover;
+    margin-right: 2rem;
+    max-width: 100%;
+}
+
+/* Typography */
 h1 {
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
@@ -101,6 +112,11 @@ li {
     font-size: 1.125rem;
 }
 
+p {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+}
+
 a {
     color: #cc5c00;
     text-decoration: none;
@@ -110,11 +126,7 @@ a:hover {
     text-decoration: underline;
 }
 
-p {
-    margin-bottom: 1.25rem;
-    font-size: 1rem;
-}
-
+/* Content Specific Styles */
 .container ul li p {
     margin: 0.625rem 0;
 }
@@ -142,58 +154,38 @@ p {
     margin-right: 0.3rem;
 }
 
-.summary {
-    margin-top: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.summary::before {
-    content: '▶';
-    position: absolute;
-    left: -0rem;
-    color: #cc5c00;
-}
-
+.summary,
 .award {
     margin-top: 0.5rem;
     padding-left: 1.5rem;
     position: relative;
 }
 
+.summary::before,
 .award::before {
     content: '▶';
     position: absolute;
-    left: -0rem;
+    left: 0;
+}
+
+.summary::before {
+    color: #cc5c00;
+}
+
+.award::before {
     color: #a1005b;
 }
 
-
+/* Tooltip Styles */
 .hover-name {
-  position: relative;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Light, subtle line */
-  transition: border-color 0.3s;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s;
 }
 
 .hover-name:hover {
-  border-bottom-color: rgba(0, 0, 0, 0.5); /* Slightly darker on hover */
-}
-
-.tooltip {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  bottom: 1.5em; /* Roughly equivalent to 24px if base font size is 16px */
-  left: 0;
-  background-color: #fff;
-  color: #000;
-  padding: 0.3em 0.5em; /* Flexible padding */
-  border-radius: 0.3em; /* Rounded corners that scale with text size */
-  font-size: 0.9em;
-  width: max-content;
-  box-shadow: 0em 0.25em 0.5em rgba(0, 0, 0, 0.2);
-  transition: opacity 0.3s;
+    border-bottom-color: rgba(0, 0, 0, 0.5);
 }
 
 .hover-name:hover .tooltip {
@@ -201,14 +193,106 @@ p {
     opacity: 1;
 }
 
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 1.5em;
+    left: 0;
+    background-color: #fff;
+    color: #000;
+    padding: 0.3em 0.5em;
+    border-radius: 0.3em;
+    font-size: 0.9em;
+    width: max-content;
+    box-shadow: 0em 0.25em 0.5em rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+}
+
+/* Highlighted Text */
 .highlight {
     font-weight: bold;
     color: #a1005b;
     font-size: 1em;
 }
 
+/* Image Styles */
 .paper-image {
     width: auto;
-    height: 15rem;
+    height: auto;
+    max-width: 100%;
+    max-height: 15rem;
     margin-left: 1.5rem;
+}
+
+.content {
+    width: 100%;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        margin-top: 0;
+    }
+
+    body {
+        font-size: 0.9rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header .links a {
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .links a {
+        font-size: 1rem;
+    }
+
+    p,
+    li {
+        font-size: 0.9rem;
+    }
+
+    footer p,
+    footer a {
+        font-size: 0.9rem;
+        /* Slightly smaller footer text */
+    }
+
+    /* Adjust profile layout on mobile */
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        height: 10rem;
+        width: auto;
+    }
+
+    .intro {
+        text-align: center;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .paper-image {
+        margin-left: 0;
+    }
 }
