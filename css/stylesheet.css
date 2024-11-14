@@ -234,6 +234,7 @@ a:hover {
 @media (max-width: 600px) {
     .container {
         margin-top: 0;
+        margin-bottom: 0;
     }
 
     body {
